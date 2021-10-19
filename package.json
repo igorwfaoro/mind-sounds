@@ -1,0 +1,35 @@
+{
+  "name": "toikos-website",
+  "version": "1.0.0",
+  "main": "src/server.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm run build-css | ts-node app.ts",
+    "dev:watch": "npm run build-css | npm run watch-css | npm run watch-code",
+    "watch-code": "ts-node-dev app.ts",
+    "build-css": "node-sass src/scss/export -o src/public/css -q --output-style compressed",
+    "watch-css": "node-sass -w src/scss/export -o src/public/css -q --output-style compressed",
+    "build": "npm run build-css | tsc",
+    "prod": "node dist/app.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "moment-timezone": "^0.5.32",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.13",
+    "@types/uuid": "^8.3.1",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.13",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.4.4"
+  }
+}

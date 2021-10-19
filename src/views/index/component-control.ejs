@@ -1,0 +1,175 @@
+<component-control inline-template>
+    <section id="control">
+
+        <div class="container">
+
+            <div class="row master">
+
+                <div class="col-md-3 master-volume">
+                    <label>Master volume</label>
+                    <input type="range"
+                           class="form-range"
+                           min="0"
+                           max="100"
+                           value="100"
+                           v-bind:ref="masterVolumeRangeId"
+                           v-on:change="setMasterVolume($event.target.value)">
+                </div>
+
+                <div class="col-md-2">
+                    <button type="button"
+                            class="btn btn-outline-light mute"
+                            v-on:click="mute()"
+                            v-bind:disabled="muteDisabled">
+                        <i v-bind:class="'fas fa-' + (isMuted ? 'volume-up' : 'volume-mute')"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-3 sound"
+                     v-for="s in sounds">
+
+                    <div class="icon"
+                         v-bind:class="{ paused: s.paused }"
+                         v-on:click="playPause(s)">
+                        <i v-bind:class="s.icon"></i>
+                    </div>
+
+                    <div class="name"
+                         v-bind:class="{ paused: s.paused }"
+                         v-on:click="playPause(s)">
+                        {{ s.name }}
+                    </div>
+
+                    <div class="sound-control">
+
+                        <button type="button"
+                                class="btn btn-outline-light"
+                                v-on:click="playPause(s)">
+                            <i v-bind:class="'fas fa-' + (s.paused ? 'play' : 'pause')"></i>
+                        </button>
+
+                        <input type="range"
+                               class="form-range"
+                               min="0"
+                               max="100"
+                               v-on:change="setSoundVolume(s, $event.target.value)"
+                               v-bind:ref="s.volumeRangeId">
+                    </div>
+
+                    <div class="audio">
+                        <audio controls
+                               loop
+                               v-bind:ref="s.audioId">
+
+                            <source v-bind:src="s.soundUrl"
+                                    type="audio/mpeg">
+
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</component-control>
+
+<script type="application/javascript">
+    Vue.component('component-control', {
+        data() {
+            return {
+                soundAudioKey: 'soundAudio',
+                masterVolume: 100,
+                masterVolumeRangeId: 'masterVolume',
+                sounds: [],
+                isMuted: false,
+                muteDisabled: true
+            }
+        },
+
+        created() {
+            this.getSounds().then(() => {
+
+                this.sounds.forEach(s => {
+                    const range = this.getRef(s.volumeRangeId);
+                    range.value = 100;
+                });
+            });
+        },
+
+        methods: {
+            mute() {
+                this.sounds.forEach(s => {
+                    const audio = this.getRef(s.audioId);
+                    audio.muted = !this.isMuted
+                });
+
+                this.isMuted = !this.isMuted;
+            },
+
+            playPause(sound) {
+                const audio = this.getRef(sound.audioId);
+
+                if (this.muteDisabled)
+                    this.muteDisabled = false;
+
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+
+                sound.paused = audio.paused;
+            },
+
+            setMasterVolume(volumeValue) {
+                this.masterVolume = volumeValue;
+
+                this.sounds.forEach(s => this.setSoundVolume(s));
+
+                console.log('set master volume', this.masterVolume)
+            },
+
+            setSoundVolume(sound, volumeValue) {
+
+                const audio = this.getRef(sound.audioId);
+
+                if (volumeValue === undefined)
+                    volumeValue = this.getRef(sound.volumeRangeId).value;
+
+                audio.volume = this.masterVolume / 100 * volumeValue / 100;
+
+                console.log('set volume', audio.volume);
+            },
+
+            getRef(id) {
+                return this.$refs[id][0];
+            },
+
+            async getSounds() {
+                const response = await axios.get(`/sounds`);
+
+                this.sounds = this.mapSounds(response.data);
+                console.log(this.sounds);
+            },
+
+            mapSounds(sounds) {
+                return sounds.map(s => {
+                    return {
+                        ...s,
+                        soundUrl: `/sounds/audio/${s.sound}`,
+                        audioId: `audio-${s.id}`,
+                        volumeRangeId: `volumeRange-${s.id}`,
+                        paused: true
+                    }
+                });
+            }
+        }
+    });
+</script>

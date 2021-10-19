@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Rain",
+        "sound": "main-rain.mp4",
+        "icon": "fas fa-cloud-rain"
+    },
+    {
+        "id": 2,
+        "name": "Thunder",
+        "sound": "main-thunder.mp4",
+        "icon": "fas fa-bolt"
+    },
+    {
+        "id": 3,
+        "name": "Waves",
+        "sound": "main-waves.mp4",
+        "icon": "fas fa-water"
+    },
+    {
+        "id": 4,
+        "name": "Wind",
+        "sound": "main-wind.mp4",
+        "icon": "fas fa-wind"
+    },
+    {
+        "id": 5,
+        "name": "Fire",
+        "sound": "main-fire.mp4",
+        "icon": "fas fa-fire-alt"
+    },
+    {
+        "id": 6,
+        "name": "Birds",
+        "sound": "main-birds.mp4",
+        "icon": "fas fa-crow"
+    },
+    {
+        "id": 7,
+        "name": "Crickets",
+        "sound": "main-crickets.mp4",
+        "icon": "fas fa-seedling"
+    },
+    {
+        "id": 8,
+        "name": "Coffee Shop",
+        "sound": "main-people.mp4",
+        "icon": "fas fa-coffee"
+    },
+    {
+        "id": 9,
+        "name": "Singing Bowl",
+        "sound": "main-sbowl.mp4",
+        "icon": "fas fa-wave-square"
+    },
+    {
+        "id": 10,
+        "name": "White Noise",
+        "sound": "main-whitenoise.mp4",
+        "icon": "fas fa-tv"
+    }
+]

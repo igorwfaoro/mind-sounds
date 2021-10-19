@@ -1,0 +1,83 @@
+<?
+      const pageTitle = title.toLowerCase() != general.title.toLowerCase() ? `${title} | ${general.title}` : title;
+
+      const pageOptions = {
+            description: options.description || 'description',
+            image: options.image || 'image'
+      };
+?>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
+
+<!-- Fav icon -->
+<link rel="shortcut icon"
+      type="image/png"
+      href="/images/logo-icon-2.png" />
+
+<title>
+      <?= pageTitle ?>
+</title>
+
+<!-- General SEO -->
+<meta name="description"
+      content="<?= pageOptions.description ?>">
+<meta name="author"
+      content="Seigas">
+<meta name="robots"
+      content="index">
+
+<!-- Google/Schema.org -->
+<meta itemprop="name"
+      content="<?= pageTitle ?>">
+<meta name="description"
+      content="<?= pageOptions.description ?>">
+<meta name="image"
+      content="<?= pageOptions.image ?>">
+
+<!-- Facebook -->
+<meta property="og:title"
+      content="<?= pageTitle ?>">
+<meta property="og:description"
+      content="<?= pageOptions.description ?>">
+<meta property="og:site_name"
+      content="Seigas">
+<meta property="og:type"
+      content="website">
+<meta property="og:image"
+      content="<?= pageOptions.image ?>">
+
+<!-- Twitter -->
+<meta name="twitter:title"
+      content="<?= pageTitle ?>">
+<meta name="twitter:description"
+      content="<?= pageOptions.description ?>">
+<meta name="twitter:card"
+      content="summary">
+<meta name="twitter:image"
+      content="<?= pageOptions.image ?>">
+
+<link rel="stylesheet"
+      href="/css/bootstrap.css">
+
+<link rel="stylesheet"
+      href="/css/main.css">
+
+<meta name="theme-color"
+      content="#041A31">
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-26BB4PXQH2"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-26BB4PXQH2');
+</script> -->

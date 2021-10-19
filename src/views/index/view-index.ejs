@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <?- include('../common/head', {
+        title: general.title,
+        options: {}
+    }) ?>
+
+    <link rel="stylesheet"
+          href="/css/view-index.css">
+</head>
+
+<body>
+
+    <div class="rain"></div>
+
+    <div id="viewIndex">
+        <?- include('./component-header') ?>
+
+        <?- include('./component-control') ?>
+
+        <?- include('./component-about') ?>
+
+        <footer>
+            Igor Wilian Faoro |
+            <?= year ?>
+        </footer>
+    </div>
+
+    <?- include('../common/scripts')?>
+
+    <script>
+
+        const viewIndex = new Vue({
+            el: '#viewIndex'
+        });
+
+    </script>
+</body>
+
+</html>
