@@ -5,7 +5,7 @@
         "pretty": true,
         "sourceMap": true,
         "target": "es6",
-        "outDir": "./app",
+        "outDir": "./public",
         "baseUrl": "./",
         "typeRoots": [
             "node_modules/@types"
