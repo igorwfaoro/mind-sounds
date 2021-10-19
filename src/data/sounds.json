@@ -1,62 +1,140 @@
 [
     {
-        "id": 1,
+        "id": "17e8b54a-59a1-5b21-9f95-923b808e0510",
         "name": "Rain",
         "sound": "main-rain.mp4",
         "icon": "fas fa-cloud-rain"
     },
     {
-        "id": 2,
+        "id": "2ab91cef-630d-5d05-8e77-547b3ca145fe",
         "name": "Thunder",
         "sound": "main-thunder.mp4",
         "icon": "fas fa-bolt"
     },
     {
-        "id": 3,
+        "id": "d6a5dcce-e4c5-59bd-b6d9-1adde38efc41",
         "name": "Waves",
         "sound": "main-waves.mp4",
         "icon": "fas fa-water"
     },
     {
-        "id": 4,
+        "id": "98f99701-d5d9-566d-bcc6-eed014cc27e4",
         "name": "Wind",
         "sound": "main-wind.mp4",
         "icon": "fas fa-wind"
     },
     {
-        "id": 5,
+        "id": "b2c31e1a-e95c-5ac8-9639-ad58a8658415",
         "name": "Fire",
         "sound": "main-fire.mp4",
         "icon": "fas fa-fire-alt"
     },
     {
-        "id": 6,
+        "id": "13682755-321a-5161-b43a-2ff04160c836",
         "name": "Birds",
         "sound": "main-birds.mp4",
         "icon": "fas fa-crow"
     },
     {
-        "id": 7,
+        "id": "fe3a6f2f-8f16-50f0-8cbf-ca6794529056",
         "name": "Crickets",
         "sound": "main-crickets.mp4",
         "icon": "fas fa-seedling"
     },
     {
-        "id": 8,
+        "id": "a2703871-8e43-53f9-8c10-978b009e4e40",
         "name": "Coffee Shop",
         "sound": "main-people.mp4",
         "icon": "fas fa-coffee"
     },
     {
-        "id": 9,
+        "id": "5e02aa93-5ccb-596c-9a77-95f74a6dab54",
         "name": "Singing Bowl",
         "sound": "main-sbowl.mp4",
         "icon": "fas fa-wave-square"
     },
     {
-        "id": 10,
+        "id": "f25ebf47-20b0-56c3-8741-5fb0c6d5facb",
         "name": "White Noise",
         "sound": "main-whitenoise.mp4",
         "icon": "fas fa-tv"
+    },
+    {
+        "id": "232051e3-a4a3-548a-ada8-4d508ef137a7",
+        "name": "Rain on Trees",
+        "sound": "main-raintrees.mp4",
+        "icon": "fas fa-cloud-rain"
+    },
+    {
+        "id": "9c4ced4f-5028-57eb-8bb2-76a0863c13b4",
+        "name": "Rain on Tin Roof",
+        "sound": "main-raintinroof.mp4",
+        "icon": "fas fa-cloud-rain"
+    },
+    {
+        "id": "a06d4260-ef5e-50d3-9acb-1241e4e4967b",
+        "name": "Rain on Cabin",
+        "sound": "main-raincabin.mp4",
+        "icon": "fas fa-cloud-rain"
+    },
+    {
+        "id": "c70bc28e-6c99-5dc5-86ff-e549a67fa29c",
+        "name": "Stream",
+        "sound": "main-stream.mp4",
+        "icon": "fas fa-tint"
+    },
+    {
+        "id": "e79c5446-d804-58ef-b636-3458588a9734",
+        "name": "Waterfall",
+        "sound": "main-waterfall.mp4",
+        "icon": "fas fa-water"
+    },
+    {
+        "id": "ddf9553f-be31-5561-abfd-7f82261a06ad",
+        "name": "Cicadas",
+        "sound": "main-cicadas.mp4",
+        "icon": "fas fa-seedling"
+    },
+    {
+        "id": "fc49e9a9-b89f-5da5-b5fd-9b4e6618b187",
+        "name": "Metal Chimes",
+        "sound": "main-chimesmetal.mp4",
+        "icon": "fas fa-bell"
+    },
+    {
+        "id": "9004c57d-9381-5f3e-ad0f-ccf38d026c81",
+        "name": "City",
+        "sound": "main-city.mp4",
+        "icon": "fas fa-city"
+    },
+    {
+        "id": "4b059d05-be3b-50b1-821e-8d76db273b92",
+        "name": "Fan on Low",
+        "sound": "main-fanlow.mp4",
+        "icon": "fas fa-fan"
+    },
+    {
+        "id": "2bc42aa5-d6e9-55dc-a70f-020261e11bec",
+        "name": "Fan on High",
+        "sound": "main-fanhigh.mp4",
+        "icon": "fas fa-fan"
+    },
+    {
+        "id": "5feb2d85-4e15-5903-bbd0-793dd81f0f46",
+        "name": "Air Conditioning",
+        "sound": "main-aircon.mp4",
+        "icon": "fas fa-wind"
+    },
+    {
+        "id": "4c443337-602b-54e2-adbf-775a63150ed5",
+        "name": "Brown Noise",
+        "sound": "main-brownnoise.mp4",
+        "icon": "fas fa-record-vinyl"
+    },
+    {
+        "id": "d91ec78c-6569-5c39-9378-111d9b76a3d0",
+        "name": "Pink Noise",
+        "sound": "main-pinknoise.mp4",
+        "icon": "fas fa-record-vinyl"
     }
 ]
