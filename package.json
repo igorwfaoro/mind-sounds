@@ -1,7 +1,7 @@
 {
   "name": "toikos-website",
   "version": "1.0.0",
-  "main": "public/app.js",
+  "main": "dist/app.js",
   "license": "MIT",
   "scripts": {
     "dev": "npm run build-css | ts-node app.ts",
@@ -10,7 +10,7 @@
     "build-css": "node-sass src/scss/export -o src/public/css -q --output-style compressed",
     "watch-css": "node-sass -w src/scss/export -o src/public/css -q --output-style compressed",
     "build": "npm run build-css | tsc",
-    "prod": "node public/app.js",
+    "prod": "node dist/app.js",
     "start": "npm run prod"
   },
   "dependencies": {
