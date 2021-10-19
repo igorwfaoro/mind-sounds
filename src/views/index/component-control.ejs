@@ -29,7 +29,7 @@
 
             <div class="row">
 
-                <div class="col-md-3 col-6 sound"
+                <div class="col-md-2 col-6 sound"
                      v-for="s in sounds">
 
                     <div class="icon"
@@ -46,18 +46,19 @@
 
                     <div class="sound-control">
 
-                        <button type="button"
+                        <!-- <button type="button"
                                 class="btn btn-outline-light"
                                 v-on:click="playPause(s)">
                             <i v-bind:class="'fas fa-' + (s.paused ? 'play' : 'pause')"></i>
-                        </button>
+                        </button> -->
 
                         <input type="range"
                                class="form-range"
                                min="0"
                                max="100"
                                v-on:change="setSoundVolume(s, $event.target.value)"
-                               v-bind:ref="s.volumeRangeId">
+                               v-bind:ref="s.volumeRangeId"
+                               v-bind:disabled="s.paused">
                     </div>
 
                     <div class="audio">
