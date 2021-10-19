@@ -32,5 +32,5 @@ app.use(routes);
 app.use(onError);
 
 app.listen(CONFIG.PORT, CONFIG.HOST, () => {
-    console.log(`Running on http://${CONFIG.HOST}:${CONFIG.PORT}`);
+    console.log(`Running on ${CONFIG.HOST ? 'http://' + CONFIG.HOST + ':' + CONFIG.PORT : CONFIG.PORT}`);
 });
