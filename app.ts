@@ -26,9 +26,7 @@ app.use(express.static(`${process.cwd()}/src/public`, {
 }));
 
 app.use('/files', express.static(`${process.cwd()}/files`));
-
 app.use(routes);
-
 app.use(onError);
 
 app.listen(CONFIG.PORT, CONFIG.HOST, () => {
