@@ -1,17 +1,13 @@
 import { NextFunction, Request, Response, Router } from "express";
-import * as moment from 'moment-timezone';
+import { RenderHelper } from "../common/helpers/render.helper";
 
 const IndexController = Router();
 
 IndexController.get('/', async (req: Request, res: Response, next: NextFunction) => {
     try {
 
-        const general = require(`${process.cwd()}/src/data/general.json`);
-        const year = moment().format('YYYY');
-
         res.render('index/view-index', {
-            general,
-            year
+            ...RenderHelper.getDefaultRenderParams()
         });
     } catch (error) {
         next(error);

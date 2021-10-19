@@ -29,7 +29,7 @@
 
             <div class="row">
 
-                <div class="col-md-2 col-6 sound"
+                <div class="col-lg-2 col-md-3 col-6 sound"
                      v-for="s in sounds">
 
                     <div class="icon"
@@ -98,7 +98,7 @@
             this.getSounds().then(() => {
 
                 this.sounds.forEach(s => {
-                    const range = this.getRef(s.volumeRangeId);
+                    const range = this._getRef(s.volumeRangeId);
                     range.value = 100;
                 });
             });
@@ -107,7 +107,7 @@
         methods: {
             mute() {
                 this.sounds.forEach(s => {
-                    const audio = this.getRef(s.audioId);
+                    const audio = this._getRef(s.audioId);
                     audio.muted = !this.isMuted
                 });
 
@@ -115,7 +115,7 @@
             },
 
             playPause(sound) {
-                const audio = this.getRef(sound.audioId);
+                const audio = this._getRef(sound.audioId);
 
                 if (this.muteDisabled)
                     this.muteDisabled = false;
@@ -139,28 +139,28 @@
 
             setSoundVolume(sound, volumeValue) {
 
-                const audio = this.getRef(sound.audioId);
+                const audio = this._getRef(sound.audioId);
 
                 if (volumeValue === undefined)
-                    volumeValue = this.getRef(sound.volumeRangeId).value;
+                    volumeValue = this._getRef(sound.volumeRangeId).value;
 
                 audio.volume = this.masterVolume / 100 * volumeValue / 100;
 
                 console.log('set volume', audio.volume);
             },
 
-            getRef(id) {
+            _getRef(id) {
                 return this.$refs[id][0];
             },
 
             async getSounds() {
                 const response = await axios.get(`/sounds`);
 
-                this.sounds = this.mapSounds(response.data);
+                this.sounds = this._mapSounds(response.data);
                 console.log(this.sounds);
             },
 
-            mapSounds(sounds) {
+            _mapSounds(sounds) {
                 return sounds.map(s => {
                     return {
                         ...s,

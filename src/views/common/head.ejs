@@ -2,8 +2,8 @@
       const pageTitle = title.toLowerCase() != general.title.toLowerCase() ? `${title} | ${general.title}` : title;
 
       const pageOptions = {
-            description: options.description || 'description',
-            image: options.image || 'image'
+            description: options.description || general.description,
+            image: options.image || general.profileImage
       };
 ?>
 
@@ -66,18 +66,18 @@
       href="/css/main.css">
 
 <meta name="theme-color"
-      content="#041A31">
+      content="#0F1718">
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- <script async
-        src="https://www.googletagmanager.com/gtag/js?id=G-26BB4PXQH2"></script>
+<script async
+        src="https://www.googletagmanager.com/gtag/js?id=<?= googleAnalyticsKey ?>"></script>
 <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
 
-      gtag('config', 'G-26BB4PXQH2');
-</script> -->
+      gtag('config', '<?= googleAnalyticsKey ?>');
+</script>
