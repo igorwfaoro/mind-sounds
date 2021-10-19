@@ -10,7 +10,8 @@
     "build-css": "node-sass src/scss/export -o src/public/css -q --output-style compressed",
     "watch-css": "node-sass -w src/scss/export -o src/public/css -q --output-style compressed",
     "build": "npm run build-css | tsc",
-    "prod": "node dist/app.js"
+    "prod": "node dist/app.js",
+    "build-prod": "npm run build | npm run prod"
   },
   "dependencies": {
     "axios": "^0.21.1",
